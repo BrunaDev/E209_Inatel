@@ -26,3 +26,6 @@ Realizar os exercícios abaixo considerando o microcontrolador ATMega328, e alin
 | 11111  | LED2 ACESO  |
 
 14. Crie um programa em C que funcione como uma fechadura eletrônica. O programa deve possuir 4 botões de entrada, com resistor de pull-up interno. Os 4 botões devem ser conectados aos pinos PB1, PB2, PB3 e PB4. O comando que libera a trava do sistema deve ser conectado ao pino PD3. O sistema só será liberado se os botões forem pressionados em uma determinada ordem: **PB2 -> PB3 -> PB4 -> PB1**. Sendo que, nenhum pino pode ser pressionado e solto, ou seja, **ao final da sequência todos pinos devem estar pressionados para validar o acionamento**, que será indicado pelo nível lógico alto no pino PD3.
+
+
+###### Professor: Daniel Mosca <--> E209-C
