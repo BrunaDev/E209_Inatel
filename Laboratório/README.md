@@ -1,31 +1,26 @@
-## E209 - Lista de Exercícios GPIO
-Realizar os exercícios abaixo considerando o microcontrolador ATMega328, e alinguagem C para microcontroladores. Deve ser utilizado o conceito de máscaradebits para preservar os estados lógicos dos pinos durante as operações.
+### E209 - Exercicio_1-Lista
+01 - Em uma esteira de transporte, foi instalado um sistema de verificação de peças posicionadas de forma errada. Elabore um firmware para controlar o sistema, seguindo os passos apresentados abaixo.
+- Ao pressionar o botão LIGA (NA) a esteira entra em movimento (MOTOR = HIGH);
+- Ao pressionar o botão DESLIGA (NF) a esteira para seu movimento (MOTOR = LOW);
+- Caso aconteça o amontoamento de peças (S1 = HIGH), a esteira deverá parar imediatamente e alarme deverá ser ligado (ALARME = HIGH);
+- Para desligar o ALARME, as peças deverão estar desamontoadas (S1 = LOW) e o botão LIGA deve ser pressionado.
 
-### Exercícios - Lista 01
+![{8841F26D-3E5A-427F-8301-C7F744FE6961}](https://github.com/user-attachments/assets/36e90340-1fad-4eb6-9e5c-373840568cf3)
 
-1. Escreva um programa que configure o pino **PD2 como saída** e, em seguida, use a operação de **OR (|)** para acender apenas o bit correspondente a esse pino no registro PORTD, mantendo os outros bits inalterados.
-2. Modifique o programa anterior para apagar o bit correspondente ao pino PD2 usando a operação de **AND (&)** com o complemento de 1 (~) no bit desejado.
-3. Crie um programa que configure os pinos **PD3 e PB4 como saídas**. Em seguida, use a operação de **XOR (^)** para alternar o estado dos dois pinos simultaneamente.
-4. Escreva um programa que configure o pino **PD5 como entrada e ative o resistor de pull-up interno**. Use a operação de **AND (&)** no registro PIN para verificar o estado do pino.
-5. Modifique o programa anterior para usar a operação de **AND (&)** como complemento de 1 no bit correspondente ao pino desejado no registro PORT para inverter o estado do pino.
-6. Crie um programa que configure os pinos **PD6 e PD7 como saídas**. Em seguida, use a operação de **AND com NÃO (&~)** para apagar apenas o bit correspondenteao pino D6 no registro DDRD.
-7. Escreva um programa que configure o pino **PD2 como entrada**. Use a operação de **AND (&)** para verificar se o bit correspondente a esse pino está setado no registro PIN e, caso positivo, acenda o LED no pino PD3 usando a operação de **OR (|)**.
-8. Modifique o programa anterior para apagar o LED no pino PD3 usando a operação de **AND com NÃO (&~)** se o pino PD2 estiver setado.
-9. Crie um programa que configure os pinos **PD4, PD5 e PD6 como saídas**. Use a operação de **OR (|)** para definir esses pinos como saídas de forma simultânea.
-10. Escreva um programa que configure os pinos **PD0, PD1 e PD2 como entradas**. Use a operação de **AND (&)** para verificar se todos esses pinos estão definidos como entradas no registro DDRD.
-11. Utilizando a estrutura dos programas para ATMega328, crie um programa que **alterne o estado de um pino de saída** (de sua escolha) sempre que um botão em um pino de entrada (de sua escolha) for pressionado.
-12. Modifique o programa anterior para que sejam utilizados 2 LEDs em 2 pinos de saída, e os mesmos devem **alternar a cada clique do botão** no pino de entrada.
-13. Crie um programa que possua 5 pinos de entrada no Portal B, 1 LED1 como saída no Portal D, e um LED2 como saída no Portal C. O programa deve funcionar como um identificador de padrões, onde o **LED1 deve permanecer aceso e o LED2 apagado, enquanto as entradas possuírem bits intercalados**. Se todos as entradas estiverem com nível lógico alto ou baixo, o LED2 deve permanecer aceso, e o LED1 apagado. Exemplo:
-
-| Entradas  | Saídas |
-| ------------- | ------------- |
-| 10101  | LED1 ACESO  |
-| 10010  | NENHUM LED ACESO  |
-| 01010  | LED1 ACESO  |
-| 00000  | LED2 ACESO  |
-| 11111  | LED2 ACESO  |
-
-14. Crie um programa em C que funcione como uma fechadura eletrônica. O programa deve possuir 4 botões de entrada, com resistor de pull-up interno. Os 4 botões devem ser conectados aos pinos PB1, PB2, PB3 e PB4. O comando que libera a trava do sistema deve ser conectado ao pino PD3. O sistema só será liberado se os botões forem pressionados em uma determinada ordem: **PB2 -> PB3 -> PB4 -> PB1**. Sendo que, nenhum pino pode ser pressionado e solto, ou seja, **ao final da sequência todos pinos devem estar pressionados para validar o acionamento**, que será indicado pelo nível lógico alto no pino PD3.
+##### Solução no SimulIDE:
+![{EFFC3C3E-4F33-43C2-936E-A53796AD16A8}](https://github.com/user-attachments/assets/7b699dcd-2026-450b-88ef-e003c3a3e70f)
 
 
-###### Professor: Daniel Mosca <--> E209-C
+### E209 - Exercicio_2-Lista_Variacoes
+02 - Uma cidade está buscando implementar um semáforo preferencial para pedestres. Um microcontrolador é usado para controlar o sistema com três LEDs (vermelho, Amarelo e Azul) e um
+botão para ativação. Escreva um firmware que implemente a seguinte lógica:
+- Quando o sistema estiver ligado, apenas o LED vermelho deve estar aceso;
+- Ao pressionar o botão, o LED amarelo deve piscar por 3 segundos (LIGADO por 0,5s e DESLIGADO por 0,5s) e depois apagar;
+- Após o LED amarelo apagar, o LED azul deve acender e permanecer aceso até que o botão seja pressionado novamente;
+- Quando o botão for pressionado novamente, o processo volta ao seu estado original, descrito no passo A.
+
+##### Solução no SimulIDE:
+![{081E3AFC-04C1-4471-AE53-211AFD380F9C}](https://github.com/user-attachments/assets/9c66cc92-14ba-4773-a62a-e31577fbdd22)
+
+
+###### Monitor: Marcos Henrique <--> E209-L3
