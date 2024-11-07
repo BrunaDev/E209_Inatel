@@ -1,4 +1,4 @@
-#define BTN_PIN PD // Botão de leitura
+#define BTN_PIN PD2 // Botão de leitura
 #define LED_PIN PB0
 #define ADC_PIN PA0 // Entrada analógica
 
